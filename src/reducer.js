@@ -1,5 +1,6 @@
 const initialState = {
-    value: 0
+    value: 0,
+    color: 'RED'
 }
 
 const reducer = (state = initialState, action) => {
@@ -9,5 +10,27 @@ const reducer = (state = initialState, action) => {
             value: state.value + 1
         }
     }
-    return state
+    else if (type === "DECREMENT") {
+        return {
+            value: state.value - 1
+        }
+    }
+
+    if (type === "QUINTUPLE") {
+        return {
+            value: state.value + 5
+        }
+    }
+    else if (type === "DEQUINTUPLE") {
+        return {
+            value: state.value - 5
+        }
+    }
+    /* else if (type === "COLOR") {
+        return {
+            color: state.color 
+        }
+    } */
+
+    return state;
 }
